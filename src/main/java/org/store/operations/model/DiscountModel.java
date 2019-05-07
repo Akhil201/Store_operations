@@ -1,6 +1,6 @@
 package org.store.operations.model;
 
-public class DiscountType {
+public class DiscountModel {
 	
 	private String discountType;
 	
@@ -12,27 +12,16 @@ public class DiscountType {
 		return discountType;
 	}
 
-	public void setDiscountType(String discountType) {
-		this.discountType = discountType;
-	}
 
 	public String getCustomerType() {
 		return customerType;
-	}
-
-	public void setCustomerType(String customerType) {
-		this.customerType = customerType;
 	}
 
 	public Double getPercentage() {
 		return percentage;
 	}
 
-	public void setPercentage(Double percentage) {
-		this.percentage = percentage;
-	}
-
-	public DiscountType(String discountType, String customerType, Double percentage) {
+	public DiscountModel(String discountType, String customerType, Double percentage) {
 		super();
 		this.discountType = discountType;
 		this.customerType = customerType;

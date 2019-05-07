@@ -1,16 +1,20 @@
 package org.store.operations.util;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.store.operations.service.impl.CustomerBillServiceImpl;
+
 public class Utility {
+	
+	private Utility() {
+	}
 
-
+	static Logger logger = LoggerFactory.getLogger(CustomerBillServiceImpl.class);
 
 	public static String getDateTimeonPeriod(Integer years) {
 		DateFormat df = new SimpleDateFormat(ApiConstants.DATE_FORMAT);
@@ -27,7 +31,7 @@ public class Utility {
 			Date compDate = sdf.parse(absoluteDate);
 			return (curDate.compareTo(compDate) < 0);
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			logger.info(ex.getMessage());
 		}
 		return false;
 	}

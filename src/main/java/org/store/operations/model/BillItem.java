@@ -12,25 +12,16 @@ public class BillItem {
 		return itemName;
 	}
 
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
-	}
 
 	public Double getItemPrice() {
 		return itemPrice;
 	}
 
-	public void setItemPrice(Double itemPrice) {
-		this.itemPrice = itemPrice;
-	}
 
 	public String getItemType() {
 		return itemType;
 	}
 
-	public void setItemType(String itemType) {
-		this.itemType = itemType;
-	}
 
 	public BillItem(String itemName, Double itemPrice, String itemType) {
 		super();

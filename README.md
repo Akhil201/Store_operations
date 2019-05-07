@@ -4,7 +4,7 @@
 For Calculating discounts based on customer types 
 
 ## Sonar Report
-[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Akhil201_Store_operations)](https://sonarcloud.io/dashboard?id=Akhil201_Store_operations)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Akhil201_Store_operations2)](https://sonarcloud.io/dashboard?id=Akhil201_Store_operations2)
 
 ## Class Diagram
 ![Alt text](store_operations_class_diagram.png?raw=true "Class Diagram")

@@ -15,7 +15,7 @@ For Calculating discounts based on customer types
 
 
 ## JUnit Execution Result
-![Alt text](assessment_junit?raw=true "JUnit Execution Report")
+![Alt text](assessment_junit.png?raw=true "JUnit Execution Report")
 
 
 ## Running JUnit and Coverage Test

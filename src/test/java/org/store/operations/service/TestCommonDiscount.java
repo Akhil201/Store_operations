@@ -1,7 +1,6 @@
 package org.store.operations.service;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +9,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.store.operations.StoreOperationsApplicationTests;
 import org.store.operations.model.BillItem;
-import org.store.operations.model.Customer;
-import org.store.operations.strategy.DiscountStrategy;
 import org.store.operations.strategy.impl.TwoYearCustomer;
-import org.store.operations.util.ApiConstants;
-import org.store.operations.util.Utility;
 
 public class TestCommonDiscount extends StoreOperationsApplicationTests {
 

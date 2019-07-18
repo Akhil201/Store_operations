@@ -7,15 +7,15 @@ For Calculating discounts based on customer types
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Akhil201_Store_operations2)](https://sonarcloud.io/dashboard?id=Akhil201_Store_operations2)
 
 ## Class Diagram
-![Alt text](store_operations_class_diagram.png?raw=true "Class Diagram")
+![Alt text](Technology_assessment.png?raw=true "Class Diagram")
 
 
 ## Coverage Report
-![Alt text](store_operation_coverage_test.png?raw=true "Coverage Result")
+![Alt text](assessment_coverage.png?raw=true "Coverage Result")
 
 
 ## JUnit Execution Result
-![Alt text](store_operations_junit_test.png?raw=true "JUnit Execution Report")
+![Alt text](assessment_junit?raw=true "JUnit Execution Report")
 
 
 ## Running JUnit and Coverage Test

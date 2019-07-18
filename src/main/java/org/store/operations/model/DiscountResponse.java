@@ -14,6 +14,12 @@ public class DiscountResponse implements Serializable {
 	private Double discountAmount;
 	
 	private Double netAmount;
+	
+	
+
+	public Double getTotalAmount() {
+		return totalAmount;
+	}
 
 	public void setTotalAmount(Double totalAmount) {
 		this.totalAmount = totalAmount;

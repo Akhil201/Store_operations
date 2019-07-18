@@ -12,16 +12,8 @@ public class Cart {
 		return billItems;
 	}
 
-	public void setBillItems(List<BillItem> billItems) {
-		this.billItems = billItems;
-	}
-
 	public Customer getCustomer() {
 		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
 	}
 
 	public Cart(List<BillItem> billItems, Customer customer) {
@@ -29,5 +21,11 @@ public class Cart {
 		this.billItems = billItems;
 		this.customer = customer;
 	}
+
+	public Cart() {
+		super();
+	}
+	
+	
 	
 }

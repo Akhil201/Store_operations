@@ -10,10 +10,6 @@ public class Customer {
 	
 	private String name;
 
-	public String getId() {
-		return id;
-	}
-
 
 	public String getType() {
 		return type;
@@ -25,9 +21,6 @@ public class Customer {
 	}
 
 
-	public String getName() {
-		return name;
-	}
 
 
 	public Customer(String id, String type, String createdAt, String name) {
@@ -38,4 +31,9 @@ public class Customer {
 		this.name = name;
 	}
 
+
+	public Customer() {
+		super();
+	}
+	
 }

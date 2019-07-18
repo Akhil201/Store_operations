@@ -7,9 +7,11 @@ public class BillItem {
 	private Double itemPrice;
 	
 	private String itemType;
-
-	public String getItemName() {
-		return itemName;
+	
+	private Integer quantity;
+	
+	public Integer getQuantity() {
+		return quantity;
 	}
 
 
@@ -23,14 +25,18 @@ public class BillItem {
 	}
 
 
-	public BillItem(String itemName, Double itemPrice, String itemType) {
+	public BillItem(String itemName, Double itemPrice, String itemType, Integer quantity) {
 		super();
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;
 		this.itemType = itemType;
+		this.quantity = quantity;
 	}
-	
-	
+
+
+	public BillItem() {
+		super();
+	}
 	
 	
 }

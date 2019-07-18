@@ -36,9 +36,4 @@ public class Utility {
 		return false;
 	}
 
-	public static Double getDiscountValue(Double percentage, Double value) {
-		return (percentage / 100) * value;
-
-	}
-
 }

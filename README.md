@@ -6,6 +6,9 @@ For Calculating discounts based on customer types
 ## Sonar Report
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Akhil201_Store_operations2)](https://sonarcloud.io/dashboard?id=Akhil201_Store_operations2)
 
+When you run the application please point to http://localhost:8080/swagger-ui.html#/ to view the all the APIs
+![alt text](assessment_swagger_screenshot.png?raw=true "Swagger UI")
+
 ## Class Diagram
 ![Alt text](Technology_assessment.png?raw=true "Class Diagram")
 

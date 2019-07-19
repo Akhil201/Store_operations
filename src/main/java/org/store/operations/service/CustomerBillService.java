@@ -9,6 +9,6 @@ import org.store.operations.model.DiscountResponse;
 public interface CustomerBillService {
 
 	public DiscountResponse calculateDiscount(Cart cart);
-	
+
 	public Double getAmount(List<BillItem> billitems);
 }

@@ -14,22 +14,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig{
-	
+public class SwaggerConfig {
+
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("org.store.operations"))
-				.paths(PathSelectors.any())
-				.build()
+				.apis(RequestHandlerSelectors.basePackage("org.store.operations")).paths(PathSelectors.any()).build()
 				.apiInfo(apiInfo());
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder()
-				.title("Discount APIs")
-				.description("Spring Boot Technology Assessment")
-				.version("1.0")
-				.build();
+		return new ApiInfoBuilder().title("Discount APIs").description("Spring Boot Technology Assessment")
+				.version("1.0").build();
 	}
 }

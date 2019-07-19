@@ -1,39 +1,43 @@
 package org.store.operations.model;
 
-public class Customer {
-	
+import java.io.Serializable;
+import java.util.Date;
+
+import org.store.operations.util.CustomerType;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+public class Customer implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 74125896L;
+
 	private String id;
-	
-	private String type;
-	
-	private String createdAt;
-	
-	private String name;
 
+	private CustomerType type;
 
-	public String getType() {
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+	private Date createdAt;
+
+	public CustomerType getType() {
 		return type;
 	}
 
-
-	public String getCreatedAt() {
+	public Date getCreatedAt() {
 		return createdAt;
 	}
 
-
-
-
-	public Customer(String id, String type, String createdAt, String name) {
+	public Customer(String id, CustomerType type, Date createdAt) {
 		super();
 		this.id = id;
 		this.type = type;
 		this.createdAt = createdAt;
-		this.name = name;
 	}
-
 
 	public Customer() {
 		super();
 	}
-	
+
 }

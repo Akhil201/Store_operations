@@ -10,12 +10,10 @@ public class DiscountResponse implements Serializable {
 	private static final long serialVersionUID = 464564L;
 
 	private Double totalAmount;
-	
+
 	private Double discountAmount;
-	
+
 	private Double netAmount;
-	
-	
 
 	public Double getTotalAmount() {
 		return totalAmount;
@@ -40,7 +38,5 @@ public class DiscountResponse implements Serializable {
 	public void setNetAmount(Double netAmount) {
 		this.netAmount = netAmount;
 	}
-	
-	
-	
+
 }

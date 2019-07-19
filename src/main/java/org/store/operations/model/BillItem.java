@@ -1,31 +1,37 @@
 package org.store.operations.model;
 
-public class BillItem {
+import java.io.Serializable;
+
+import org.store.operations.util.ItemType;
+
+public class BillItem implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 963258L;
 
 	private String itemName;
-	
+
 	private Double itemPrice;
-	
-	private String itemType;
-	
+
+	private ItemType itemType;
+
 	private Integer quantity;
-	
+
 	public Integer getQuantity() {
 		return quantity;
 	}
-
 
 	public Double getItemPrice() {
 		return itemPrice;
 	}
 
-
-	public String getItemType() {
+	public ItemType getItemType() {
 		return itemType;
 	}
 
-
-	public BillItem(String itemName, Double itemPrice, String itemType, Integer quantity) {
+	public BillItem(String itemName, Double itemPrice, ItemType itemType, Integer quantity) {
 		super();
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;
@@ -33,10 +39,8 @@ public class BillItem {
 		this.quantity = quantity;
 	}
 
-
 	public BillItem() {
 		super();
 	}
-	
-	
+
 }

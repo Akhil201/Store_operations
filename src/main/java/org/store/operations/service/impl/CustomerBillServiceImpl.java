@@ -16,20 +16,24 @@ import org.store.operations.strategy.impl.AffiliatedCustomer;
 import org.store.operations.strategy.impl.EmployeeCustomer;
 import org.store.operations.strategy.impl.GeneralCustomer;
 import org.store.operations.strategy.impl.TwoYearCustomer;
-import org.store.operations.util.ApiConstants;
+import org.store.operations.util.CustomerType;
+import org.store.operations.util.ItemType;
 import org.store.operations.util.Utility;
 
 @Service
 public class CustomerBillServiceImpl implements CustomerBillService {
 	Logger logger = LoggerFactory.getLogger(CustomerBillServiceImpl.class);
 
+	/***
+	 * Getting the discounted amount based on customer type and bill items provided
+	 */
 	@Override
 	public DiscountResponse calculateDiscount(Cart cart) {
-		
+
 		DiscountStrategy strategy = getCustomerDiscountStrategy(cart.getCustomer());
 		Double totalAmount = getAmount(cart.getBillItems());
 		Double nonGroceryAmount = getAmount(getNonGroceryItems(cart.getBillItems()));
-		Double discount =strategy.getDiscount(nonGroceryAmount, totalAmount);
+		Double discount = strategy.getDiscount(nonGroceryAmount, totalAmount);
 		DiscountResponse response = new DiscountResponse();
 		response.setDiscountAmount(discount);
 		response.setNetAmount(totalAmount - discount);
@@ -37,30 +41,34 @@ public class CustomerBillServiceImpl implements CustomerBillService {
 		return response;
 	}
 
-	
-	private List<BillItem> getNonGroceryItems(List<BillItem> billItems){
-		return billItems.stream().filter(x -> !x.getItemType().equalsIgnoreCase("grocery")).collect(Collectors.toList()); 
+	private List<BillItem> getNonGroceryItems(List<BillItem> billItems) {
+		return billItems.stream().filter(x -> x.getItemType() != ItemType.GROCERY)
+				.collect(Collectors.toList());
 	}
 
+	/***
+	 * Returns DiscountStrategy based on the customer type
+	 * 
+	 * @param customer
+	 * @return
+	 */
 	private DiscountStrategy getCustomerDiscountStrategy(Customer customer) {
 		DiscountStrategy strategy = new GeneralCustomer();
-		if (customer.getType().equalsIgnoreCase(ApiConstants.GENERAL)) {
-			if (isTwoYearOldUser(customer.getCreatedAt())) {
+		if (customer.getType() == CustomerType.GENERAL) {
+			if (Utility.isDateBeforeTheYears(customer.getCreatedAt(), 2)) {
 				strategy = new TwoYearCustomer();
 			}
-		} else if (customer.getType().equals(ApiConstants.AFFILIATED)) {
+		} else if (customer.getType() == CustomerType.AFFILIATED) {
 			strategy = new AffiliatedCustomer();
-		} else if (customer.getType().equals(ApiConstants.EMPLOYEE)) {
+		} else if (customer.getType() == CustomerType.EMPLOYEE) {
 			strategy = new EmployeeCustomer();
 		}
 		return strategy;
 	}
-	
-	private Boolean isTwoYearOldUser(String userCreatedDate) {
-		String dateTwoYrsBefore = Utility.getDateTimeonPeriod(-2);
-		return Utility.compareDates(userCreatedDate, dateTwoYrsBefore);
-	}
 
+	/***
+	 * Returns total amount for the bill items
+	 */
 	@Override
 	public Double getAmount(List<BillItem> billitems) {
 		return billitems.stream().map(item -> item.getItemPrice() * item.getQuantity()).reduce(0.0, Double::sum);

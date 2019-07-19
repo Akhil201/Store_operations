@@ -14,20 +14,17 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@Api(tags = {"Bill Services"})
+@Api(tags = { "Bill Services" })
 public class BillingController {
 
 	@Autowired
 	private CustomerBillService customerBillService;
-	
+
 	@ApiOperation(value = "Get Net Amount", notes = "Getting net amount from provided Bill")
-	@ApiResponses(value = {
-	@ApiResponse(code = 200, message = "JSON Response"),
-	@ApiResponse(code = 500, message = "Internal Server Error")})
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "JSON Response"),
+			@ApiResponse(code = 500, message = "Internal Server Error") })
 	@PostMapping("/calculateDiscount")
-	public DiscountResponse bill(@RequestBody Cart cart)
-	{
+	public DiscountResponse bill(@RequestBody Cart cart) {
 		return customerBillService.calculateDiscount(cart);
 	}
 }
-
